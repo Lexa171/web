@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+  <property resource="logback.properties" />
+  
+  <appender name="FILE_SERVICE" class="ch.qos.logback.core.FileAppender">
+	<file>${url.file.service}</file>	
+	<layout class="ch.qos.logback.classic.PatternLayout">
+		<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+		</Pattern>
+	</layout>
+</appender>
+<appender name="FILE_ROOT" class="ch.qos.logback.core.FileAppender">
+	<file>${url.file.root}</file>	
+	<layout class="ch.qos.logback.classic.PatternLayout">
+		<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+		</Pattern>
+	</layout>
+</appender>
+  <logger name="ru.spb.epam.agladkiy.controller" level="INFO">
+  	<appender-ref ref="FILE_SERVICE"/>
+  </logger>
+  
+
+  <root level="INFO">
+    <appender-ref ref="FILE_ROOT"/>
+  </root>
+</configuration>
